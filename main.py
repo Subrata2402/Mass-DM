@@ -286,7 +286,7 @@ class Bot(discord.Client):
         print("Connected to discord.")
         print("User: " + self.user.name)
         print("ID: " + str(self.user.id))
-        log=self.get_channel(738938994292817970)
+        log=self.get_channel(775942082615443497)
         await log.send("> ** Helper Database Is Updated ** ✅")
         await self.clear_results()
         await self.update_embeds()
