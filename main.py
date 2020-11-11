@@ -204,15 +204,15 @@ class Bot(discord.Client):
 
         if lowest < 0:
             if wrong == 1:
-                one_cross = "<a:emoji_71:745499548733931562>  "
+                one_cross = " ❌"
                 #erased_answer = "❌ :one: = ❌ " 
                
             if wrong == 2:
-                two_cross = "<a:emoji_71:745499548733931562>  "
+                two_cross = " ❌"
                 #erased_answer = "<a:emoji_53:721389606712377505> :two: = ❌" 
                
             if wrong == 3:
-                three_cross = "<a:emoji_71:745499548733931562>  "
+                three_cross = " ❌"
                 #erased_answer = "<a:emoji_53:721389606712377505> :three: = ❌"
          
     
