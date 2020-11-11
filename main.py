@@ -132,8 +132,8 @@ class Bot(discord.Client):
         self.embed.add_field(name="**__Option ❸__**", value=f"**[0]({g})**", inline=False)
         self.embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/775384878942257173/775933617943347230/unnamed.gif")
         self.embed.set_footer(text='Made by Subrata#3297',icon_url='https://cdn.discordapp.com/avatars/660337342032248832/828f7b13ce161e8a9d4c129e0ac776c4.webp?size=1024')
-        #self.embed.add_field(name="**__Correct Answer__**", value="0", inline=False)
-       # self.embed.add_field(name="**__Not Answer__**", value="0", inline=False) 
+        self.embed.add_field(name="**__Correct Answer__**", value="0", inline=False)
+        self.embed.add_field(name="**__Not Answer__**", value="0", inline=False) 
 
 
         #await self.bot.add_reaction(embed,':spy:')
@@ -157,8 +157,8 @@ class Bot(discord.Client):
         one_cross =""
         two_cross =""
         three_cross =""
-        #best_answer = "** **   **`Fetching ...`** ** **"
-        #erased_answer = "** **  **`Erasing ...` ** ** **"
+        best_answer = "** **   **`Fetching ...`** ** **"
+        not_answer = "** **  **`Erasing ...` ** ** **"
               
 
         lst_scores = list(self.answer_scores)
@@ -166,7 +166,7 @@ class Bot(discord.Client):
 
         highest = max(lst_scores)
         gif_ans = 'https://cdn.discordapp.com/attachments/716879425655799858/745718978214625410/726164501543518278.gif'
-        #best_answer = 'Loading'
+        best_answer = 'Loading'
         lowest = min(lst_scores)
         answer = lst_scores.index(highest)+1
         wrong = lst_scores.index(lowest)+1
@@ -177,7 +177,7 @@ class Bot(discord.Client):
                 one_check = " <:emoji_13:772843132093202443>  "
                 mark_check_one = "<:emoji_62:735102374523306047>"
                 gif_ans = "https://cdn.discordapp.com/attachments/716879425655799858/742730340744822864/723415445167931452.png"
-                #best_answer = "** ** **Answer :** :one: = ✅"
+                best_answer = "** ** **Answer :** :one: = ✅"
                    
             else:
                 one_check = " "
@@ -186,7 +186,7 @@ class Bot(discord.Client):
                 two_check = " <:emoji_13:772843132093202443>  "
                 mark_check_two = "<:emoji_62:735102374523306047>"
                 gif_ans = "https://cdn.discordapp.com/attachments/716879425655799858/742730400706854972/723416002666299433.png"
-                #best_answer = "** ** **Answer :** :two: = ✅"
+                best_answer = "** ** **Answer :** :two: = ✅"
                    
             else:
                 two_check = ""
@@ -195,7 +195,7 @@ class Bot(discord.Client):
                 three_check = " <:emoji_13:772843132093202443> "
                 mark_check_three = "<:emoji_62:735102374523306047>"
                 gif_ans = "https://cdn.discordapp.com/attachments/716879425655799858/742730625647247501/723418348834258974.png"
-                #best_answer = "** ** **Answer :** :three: = ✅"
+                best_answer = "** ** **Answer :** :three: = ✅"
                    
             else:
                 three_check = ""
@@ -205,23 +205,23 @@ class Bot(discord.Client):
         if lowest < 0:
             if wrong == 1:
                 one_cross = " ❌"
-                #erased_answer = "❌ :one: = ❌ " 
+                not_answer = "❌ :one: = ❌ " 
                
             if wrong == 2:
                 two_cross = " ❌"
-                #erased_answer = "<a:emoji_53:721389606712377505> :two: = ❌" 
+                not_answer = "<a:emoji_53:721389606712377505> :two: = ❌" 
                
             if wrong == 3:
                 three_cross = " ❌"
-                #erased_answer = "<a:emoji_53:721389606712377505> :three: = ❌"
+                not_answer = "<a:emoji_53:721389606712377505> :three: = ❌"
          
     
         self.embed.set_field_at(0, name="**__Option ❶__**", value=f"**[{lst_scores[0]}]({g}){one_check}{one_cross}**")
         self.embed.set_field_at(1, name="**__Option ❷__**", value=f"**[{lst_scores[1]}]({g}){two_check}{two_cross}**")
         self.embed.set_field_at(2, name="**__Option ❸__**", value=f"**[{lst_scores[2]}]({g}){three_check}{three_cross}**")
         self.embed.set_thumbnail(url="{}".format(gif_ans))
-       # self.embed.set_field_at(3, name="**__Correct Answer__**", value=f"**[{confirm}]({g}) {right_answer}**", inline=True)
-      #  self.embed.set_field_at(4, name="**__Not Answer__**", value=f"**[{uncnf}]({g}) {not_answer}**", inline=True) 
+        self.embed.set_field_at(3, name="**__Correct Answer__**", value=f"**[{confirm}]({g}) {best_answer}**", inline=True)
+        self.embed.set_field_at(4, name="**__Not Answer__**", value=f"**[{uncnf}]({g}) {not_answer}**", inline=True) 
 
 
         if self.embed_msg is not None:
