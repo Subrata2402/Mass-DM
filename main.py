@@ -126,14 +126,8 @@ class Bot(discord.Client):
 
         # embed creation
         #value=random.randint(0,0xffffff)
-        self.embed=discord.Embed(title="**__HQ Trivia Crowd Results !__**", colour=0x00ff00)
-        self.embed.add_field(name="**__Option ❶__**", value=f"**[0]({g})**", inline=False)
-        self.embed.add_field(name="**__Option ❷__**", value=f"**[0]({g})**", inline=False)
-        self.embed.add_field(name="**__Option ❸__**", value=f"**[0]({g})**", inline=False)
-        self.embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/775384878942257173/775933617943347230/unnamed.gif")
-        self.embed.set_footer(text='Made by Subrata#3297',icon_url='https://cdn.discordapp.com/avatars/660337342032248832/828f7b13ce161e8a9d4c129e0ac776c4.webp?size=1024')
-        self.embed.add_field(name="**__Correct Answer !__**", value="0", inline=False)
-        self.embed.add_field(name="**__Erased Answer !__**", value="0", inline=False) 
+        self.embed=discord.Embed(title="**HQ TRIVIA**", colour=0x00ff00)
+        self.embed.add_field(name="**__Erased Answer__**", value="0", inline=False) 
 
 
         #await self.bot.add_reaction(embed,':spy:')
@@ -148,25 +142,13 @@ class Bot(discord.Client):
 
          
 
-        one_check = ""
-        two_check = ""
-        three_check = ""
-        mark_check_one=""
-        mark_check_two=""
-        mark_check_three=""
-        one_cross =""
-        two_cross =""
-        three_cross =""
-        best_answer = "**Option ➜** <a:redload:772439692411011073>"
-        not_answer = "**Option ➜** <a:redload:772439692411011073>"
+        not_answer = "**Option ➜ <a:redload:772439692411011073> = ❌**"
               
 
         lst_scores = list(self.answer_scores)
         
 
         highest = max(lst_scores)
-        gif_ans = 'https://cdn.discordapp.com/attachments/769445612231720960/774230429023993896/unnamed.gif'
-        best_answer = '**Option ➜** <a:redload:772439692411011073>'
         lowest = min(lst_scores)
         answer = lst_scores.index(highest)+1
         wrong = lst_scores.index(lowest)+1
@@ -175,53 +157,29 @@ class Bot(discord.Client):
         if highest > 0:
             if answer == 1:
                 one_check = " <:emoji_13:772843132093202443>  "
-                mark_check_one = "<:emoji_62:735102374523306047>"
-                gif_ans = "https://cdn.discordapp.com/attachments/769445612231720960/773618942874615828/772873539174268990.png"
-                best_answer = "**Option ➜** <:emoji_39:773917426835521536>"
-                   
-            else:
-                one_check = " "
 
             if answer == 2:
                 two_check = " <:emoji_13:772843132093202443>  "
-                mark_check_two = "<:emoji_62:735102374523306047>"
-                gif_ans = "https://cdn.discordapp.com/attachments/769445612231720960/773619358031151159/772873573999443978.png"
-                best_answer = "**Option ➜** <:emoji_50:773917478723125269>"
-                   
-            else:
-                two_check = ""
-
+                
             if answer == 3:
                 three_check = " <:emoji_13:772843132093202443> "
-                mark_check_three = "<:emoji_62:735102374523306047>"
-                gif_ans = "https://cdn.discordapp.com/attachments/769445612231720960/773619564206489600/772873605754388480.png"
-                best_answer = "**Option ➜** <:emoji_44:773918363402371074>"
-                   
-            else:
-                three_check = ""
-
-            
+                
 
         if lowest < 0:
             if wrong == 1:
-                one_cross = " ❌"
-                not_answer = "**Option ➜** <:emoji_39:773917426835521536>" 
+                one_cross = ""
+                not_answer = "**Option ➜ <:emoji_39:773917426835521536> = ❌**" 
                
             if wrong == 2:
-                two_cross = " ❌"
-                not_answer = "**Option ➜** <:emoji_50:773917478723125269>" 
+                two_cross = ""
+                not_answer = "**Option ➜ <:emoji_50:773917478723125269> = ❌**" 
                
             if wrong == 3:
-                three_cross = " ❌"
-                not_answer = "**Option ➜** <:emoji_44:773918363402371074>"
+                three_cross = ""
+                not_answer = "**Option ➜ <:emoji_44:773918363402371074> = ❌**"
          
     
-        self.embed.set_field_at(0, name="**__Option ❶__**", value=f"**[{lst_scores[0]}]({g}){one_check}{one_cross}**")
-        self.embed.set_field_at(1, name="**__Option ❷__**", value=f"**[{lst_scores[1]}]({g}){two_check}{two_cross}**")
-        self.embed.set_field_at(2, name="**__Option ❸__**", value=f"**[{lst_scores[2]}]({g}){three_check}{three_cross}**")
-        self.embed.set_thumbnail(url="{}".format(gif_ans))
-        self.embed.set_field_at(3, name="**__Correct Answer !__**", value=best_answer, inline=True)
-        self.embed.set_field_at(4, name="**__Erased Answer !__**", value=not_answer, inline=True) 
+        self.embed.set_field_at(0, name="**__Erased Answer__**", value=not_answer, inline=True) 
 
 
         if self.embed_msg is not None:
@@ -234,11 +192,11 @@ class Bot(discord.Client):
         print("User: " + self.user.name)
         print("ID: " + str(self.user.id))
         log=self.get_channel(775948612014178315)
-        await log.send("> ** Vedantu 2.0 Database Is Updated ** ✅")
+        await log.send("> ** HQ Eraser Database Is Updated ** ✅")
         await self.clear_results()
         await self.update_embeds()
         #await self.change_presence(activity=discord.Game(name='with '+str(len(set(self.get_all_members())))+' users'))
-        await self.change_presence(activity=discord.Activity(type=1,name="with Vedantu Trivia !"))
+        await self.change_presence(activity=discord.Activity(type=1,name="with HQ Eraser !"))
 
     async def on_message(self, message):
 
@@ -247,7 +205,7 @@ class Bot(discord.Client):
         if message.author == self.user or message.guild == None:
             return
 
-        if message.content.lower() == "+v":
+        if message.content.lower() == "hr":
             await message.delete()
 
             self.embed_msg = None
