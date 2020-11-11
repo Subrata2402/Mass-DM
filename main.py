@@ -126,7 +126,7 @@ class Bot(discord.Client):
 
         # embed creation
         #value=random.randint(0,0xffffff)
-        self.embed=discord.Embed(title="**HQ TRIVIA**", colour=0x00ff00)
+        self.embed=discord.Embed(title="<:HQQ:750255302787465317> **| HQ TRIVIA**", colour=0x00ff00)
         self.embed.add_field(name="**__Erased Answer__**", value="0", inline=False) 
 
 
