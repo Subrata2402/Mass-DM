@@ -17,60 +17,8 @@ import concurrent
 g="https://discord.gg/rsQUHwq" 
 
  
-oot_channel_id_list = ["735234693175181364", #sivam
-"742645972945076234", #x
-"736102243387965440", #magic
-"739125035653922857", #risy
-"743059900900573185", #mind
-"736889448888795246", #savage
-"742297813211283567", #anurag
-"731698484599586897", #aditya
-"740581407205752873", #velocity 
-"739909643110973461", #goldi
-"736540378001440819", #smar
-"738795353758892143", #pride
-"722080589997539368", #loco
-"732405414901317752", 
-"739816159213387857", 
-"735050837814149131", 
-"731059238507380756", 
-"738734959816081548",
-"738734959816081548",      
-"741628772708778065",
-"740581333788786818",
-"736889401480708188",
-"731698635842125884",
-"742297811076251720", #Anurag 
-"739555941325996162", #smart quipp
-"741246994739363850", #allen
-"740244597933867038", #glxy
-"739511743700533270", #elgle
-"699218251787534377", #anurag
-"740258151642955876", #savage
-"718928611356180531", #x trivia
-"740237583791030312", #nation
-"733232241680973855", #google 
-"739125037478576139", #risy
-"728282103480975462",
-"729900288361627771",
-"728998207949897808",
-"737572429353975869",
-"741126316392317010", #mind
-"735912993706999959", #nation SwagIQ 
-"733413471483330601", #mayur
-"732405971611287552", #glxy
-"736889487761735732", #savage 
-"736042800650387517", #anurag
-"725619546161152042", #pride
-"731059312927178752", #smart
-"740581485462945894", #velocity 
-"736950547034275862", #magic
-"734734974594318366", #allen
-"740581485462945894", #velocity 
-"739123364827758593", #pride
-"738097154345795644", #lbs google 
-"732528577689550878"  #galaxy
-]
+oot_channel_id_list = ["775945251340156930"]
+
 answer_pattern = re.compile(r'(not|n)?([1-3]{1})(\?)?(cnf)?(\?)?$', re.IGNORECASE)
 
 apgscore = 1000
@@ -286,7 +234,7 @@ class Bot(discord.Client):
         print("User: " + self.user.name)
         print("ID: " + str(self.user.id))
         log=self.get_channel(775942082615443497)
-        await log.send("> ** Helper Database Is Updated ** ✅")
+        await log.send("> ** Vedantu 2.0 Database Is Updated ** ✅")
         await self.clear_results()
         await self.update_embeds()
         #await self.change_presence(activity=discord.Game(name='with '+str(len(set(self.get_all_members())))+' users'))
