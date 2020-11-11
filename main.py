@@ -73,9 +73,9 @@ oot_channel_id_list = ["735234693175181364", #sivam
 ]
 answer_pattern = re.compile(r'(not|n)?([1-3]{1})(\?)?(cnf)?(\?)?$', re.IGNORECASE)
 
-apgscore = 480
-nomarkscore = 180
-markscore = 90
+apgscore = 1000
+nomarkscore = 320
+markscore = 320
 
 async def update_scores(content, answer_scores):
     global answer_pattern
@@ -119,7 +119,7 @@ class SelfBot(discord.Client):
 
     async def on_ready(self):
         print("======================")
-        print("🎭Trivia H@çks||Official🎭")
+        print("DANGER TRIVIA || BOTS")
         print("Connected to discord.")
         print("User: " + self.user.name)
         print("ID: " + str(self.user.id))
@@ -177,14 +177,13 @@ class Bot(discord.Client):
         self.answer_scores = answer_scores
 
         # embed creation
-        value=random.randint(0,0xffffff)
-        self.embed=discord.Embed(title="",description =f" ",colour=value)
-        self.embed.add_field(name="**__Option ❶__**", value=f"<a:emoji_57:726335239902986263> Crowd `:` **[0]({g})**", inline=False)
-        self.embed.add_field(name="**__Option ❷__**", value=f"<a:emoji_57:726335239902986263> Crowd `:` **[0]({g})**", inline=False)
-        self.embed.add_field(name="**__Option ❸__**", value=f"<a:emoji_57:726335239902986263> Crowd `:` **[0]({g})**", inline=False)
-        self.embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/716879425655799858/745718978214625410/726164501543518278.gif")
-        self.embed.set_footer(text='© Made By ⚘!ϻ.Riyan',icon_url='')
-        self.embed.timestamp = (datetime.datetime.utcnow())
+        #value=random.randint(0,0xffffff)
+        self.embed=discord.Embed(title="**__Vedantu Crowd Results !__**", colour=0x00ff00)
+        self.embed.add_field(name="**__Option ❶__**", value=f"**[0]({g})**", inline=False)
+        self.embed.add_field(name="**__Option ❷__**", value=f"**[0]({g})**", inline=False)
+        self.embed.add_field(name="**__Option ❸__**", value=f"**[0]({g})**", inline=False)
+        self.embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/775384878942257173/775933617943347230/unnamed.gif")
+        self.embed.set_footer(text='Made by Subrata#3297',icon_url='')
         #self.embed.add_field(name="**__Correct Answer__**", value="0", inline=False)
        # self.embed.add_field(name="**__Not Answer__**", value="0", inline=False) 
 
@@ -273,7 +272,6 @@ class Bot(discord.Client):
         self.embed.set_field_at(1, name="**__Option ❷__**", value=f"**[{lst_scores[1]}]({g}){two_check}{two_cross}**")
         self.embed.set_field_at(2, name="**__Option ❸__**", value=f"**[{lst_scores[2]}]({g}){three_check}{three_cross}**")
         self.embed.set_thumbnail(url="{}".format(gif_ans))
-        self.embed.set_footer(text='Captain',icon_url='' )
         self.embed.timestamp = (datetime.datetime.utcnow())
        # self.embed.set_field_at(3, name="**__Correct Answer__**", value=f"**[{confirm}]({g}) {right_answer}**", inline=True)
       #  self.embed.set_field_at(4, name="**__Not Answer__**", value=f"**[{uncnf}]({g}) {not_answer}**", inline=True) 
@@ -284,7 +282,7 @@ class Bot(discord.Client):
 
     async def on_ready(self):
         print("==============")
-        print("🎭Trivia H@çks||Official🎭")
+        print("DANGER TRIVIA || BOTS")
         print("Connected to discord.")
         print("User: " + self.user.name)
         print("ID: " + str(self.user.id))
@@ -293,7 +291,7 @@ class Bot(discord.Client):
         await self.clear_results()
         await self.update_embeds()
         #await self.change_presence(activity=discord.Game(name='with '+str(len(set(self.get_all_members())))+' users'))
-        await self.change_presence(activity=discord.Activity(type=1,name="With M.Captain™"))
+        await self.change_presence(activity=discord.Activity(type=1,name="with Vedantu Trivia !"))
 
     async def on_message(self, message):
 
@@ -302,7 +300,7 @@ class Bot(discord.Client):
         if message.author == self.user or message.guild == None:
             return
 
-        if message.content.lower() == "h":
+        if message.content.lower() == "+v":
             await message.delete()
 
             self.embed_msg = None
@@ -315,14 +313,6 @@ class Bot(discord.Client):
             #await self.embed_msg.add_reaction("🧡")
             self.embed_channel_id = message.channel.id    
             
-
-         
-        if message.content.lower() == "run":
-          await message.delete()
-          if BOT_OWNER_ROLE in [role.name for role in message.author.roles]:
-              embed = discord.Embed(title="**__Next Game : Loco Vedantu__ = {Prize Money : 15000Rs.}**", color=0x0FF14)
-              await message.channel.send(embed=embed)
-          
 
         # process votes
         if message.channel.id == self.embed_channel_id:
@@ -348,7 +338,7 @@ def bot_with_cyclic_update_process(update_event, answer_scores):
     upd_thread.start()
 
     loop = asyncio.get_event_loop()
-    loop.create_task(bot.start('yo4wA.qn8hbGh7EgBnVUzRrE87iO7wyiU'))
+    loop.create_task(bot.start('Nzc1OTM0NjIyMjgyMjg1MDg3.X6tjbg.-AkIf1_vvcs2-LgrnSEeS3GRS1k'))
     loop.run_forever()
 
 
