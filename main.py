@@ -220,8 +220,8 @@ class Bot(discord.Client):
         self.embed.set_field_at(1, name="**__Option ❷__**", value=f"**[{lst_scores[1]}]({g}){two_check}{two_cross}**")
         self.embed.set_field_at(2, name="**__Option ❸__**", value=f"**[{lst_scores[2]}]({g}){three_check}{three_cross}**")
         self.embed.set_thumbnail(url="{}".format(gif_ans))
-        self.embed.set_field_at(3, name="**__Correct Answer__**", value=f"**[{confirm}]({g}) {best_answer}**", inline=True)
-        self.embed.set_field_at(4, name="**__Not Answer__**", value=f"**[{uncnf}]({g}) {not_answer}**", inline=True) 
+        self.embed.set_field_at(3, name="**__Correct Answer__**", value=best_answer, inline=True)
+        self.embed.set_field_at(4, name="**__Not Answer__**", value=not_answer, inline=True) 
 
 
         if self.embed_msg is not None:
@@ -233,7 +233,7 @@ class Bot(discord.Client):
         print("Connected to discord.")
         print("User: " + self.user.name)
         print("ID: " + str(self.user.id))
-        log=self.get_channel(775942082615443497)
+        log=self.get_channel(775948612014178315)
         await log.send("> ** Vedantu 2.0 Database Is Updated ** ✅")
         await self.clear_results()
         await self.update_embeds()
