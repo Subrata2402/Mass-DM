@@ -142,7 +142,7 @@ class Bot(discord.Client):
 
          
 
-        not_answer = "**Option ➜ <a:redload:772439692411011073> = ❌**"
+        not_answer = "**Option ➜ <a:redload:772439692411011073> = <:emoji_43:776062431100928001>**"
               
 
         lst_scores = list(self.answer_scores)
@@ -168,15 +168,15 @@ class Bot(discord.Client):
         if lowest < 0:
             if wrong == 1:
                 one_cross = ""
-                not_answer = "**Option ➜ <:emoji_39:773917426835521536> = ❌**" 
+                not_answer = "**Option ➜ <:emoji_44:776063628561874955> = <:emoji_43:776062431100928001>**" 
                
             if wrong == 2:
                 two_cross = ""
-                not_answer = "**Option ➜ <:emoji_50:773917478723125269> = ❌**" 
+                not_answer = "**Option ➜ <:emoji_45:776063661722173452> = <:emoji_43:776062431100928001>**" 
                
             if wrong == 3:
                 three_cross = ""
-                not_answer = "**Option ➜ <:emoji_44:773918363402371074> = ❌**"
+                not_answer = "**Option ➜ <:emoji_46:776063695104639006> = <:emoji_43:776062431100928001>**"
          
     
         self.embed.set_field_at(0, name="**__Erased Answer__**", value=not_answer, inline=True) 
