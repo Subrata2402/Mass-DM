@@ -126,14 +126,14 @@ class Bot(discord.Client):
 
         # embed creation
         #value=random.randint(0,0xffffff)
-        self.embed=discord.Embed(title="**__Vedantu Crowd Results !__**", colour=0x00ff00)
+        self.embed=discord.Embed(title="**__HQ Trivia Crowd Results !__**", colour=0x00ff00)
         self.embed.add_field(name="**__Option ❶__**", value=f"**[0]({g})**", inline=False)
         self.embed.add_field(name="**__Option ❷__**", value=f"**[0]({g})**", inline=False)
         self.embed.add_field(name="**__Option ❸__**", value=f"**[0]({g})**", inline=False)
         self.embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/775384878942257173/775933617943347230/unnamed.gif")
         self.embed.set_footer(text='Made by Subrata#3297',icon_url='https://cdn.discordapp.com/avatars/660337342032248832/828f7b13ce161e8a9d4c129e0ac776c4.webp?size=1024')
-        self.embed.add_field(name="**__Correct Answer__**", value="0", inline=False)
-        #self.embed.add_field(name="**__Not Answer__**", value="0", inline=False) 
+        self.embed.add_field(name="**__Correct Answer !__**", value="0", inline=False)
+        self.embed.add_field(name="**__Erased Answer !__**", value="0", inline=False) 
 
 
         #await self.bot.add_reaction(embed,':spy:')
@@ -158,7 +158,7 @@ class Bot(discord.Client):
         two_cross =""
         three_cross =""
         best_answer = "**Option ➜** <a:redload:772439692411011073>"
-        not_answer = "** **  **`Erasing ...` ** ** **"
+        not_answer = "**Option ➜** <a:redload:772439692411011073>"
               
 
         lst_scores = list(self.answer_scores)
@@ -205,23 +205,23 @@ class Bot(discord.Client):
         if lowest < 0:
             if wrong == 1:
                 one_cross = " ❌"
-                not_answer = "❌ :one: = ❌ " 
+                not_answer = "**Option ➜** <:emoji_39:773917426835521536>" 
                
             if wrong == 2:
                 two_cross = " ❌"
-                not_answer = "<a:emoji_53:721389606712377505> :two: = ❌" 
+                not_answer = "**Option ➜** <:emoji_50:773917478723125269>" 
                
             if wrong == 3:
                 three_cross = " ❌"
-                not_answer = "<a:emoji_53:721389606712377505> :three: = ❌"
+                not_answer = "**Option ➜** <:emoji_44:773918363402371074>"
          
     
         self.embed.set_field_at(0, name="**__Option ❶__**", value=f"**[{lst_scores[0]}]({g}){one_check}{one_cross}**")
         self.embed.set_field_at(1, name="**__Option ❷__**", value=f"**[{lst_scores[1]}]({g}){two_check}{two_cross}**")
         self.embed.set_field_at(2, name="**__Option ❸__**", value=f"**[{lst_scores[2]}]({g}){three_check}{three_cross}**")
         self.embed.set_thumbnail(url="{}".format(gif_ans))
-        self.embed.set_field_at(3, name="**__Correct Answer__**", value=best_answer, inline=True)
-        #self.embed.set_field_at(4, name="**__Not Answer__**", value=not_answer, inline=True) 
+        self.embed.set_field_at(3, name="**__Correct Answer !__**", value=best_answer, inline=True)
+        self.embed.set_field_at(4, name="**__Erased Answer !__**", value=not_answer, inline=True) 
 
 
         if self.embed_msg is not None:
@@ -256,8 +256,6 @@ class Bot(discord.Client):
             self.embed_msg = \
                 await message.channel.send('',embed=self.embed)
             await self.embed_msg.add_reaction("🎉")
-            #await self.embed_msg.add_reaction("💯")
-            #await self.embed_msg.add_reaction("🧡")
             self.embed_channel_id = message.channel.id    
             
 
