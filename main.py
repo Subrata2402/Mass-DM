@@ -14,7 +14,7 @@ import concurrent
 #BOT_OWNER_ROLE = 'Runner' # change to what you need
 #BOT_OWNER_ROLE_ID = "503197827556704268" 
   
-g="https://discord.gg/rsQUHwq" 
+g="https://discord.gg/2degbQMAxU" 
 
  
 oot_channel_id_list = ["775945251340156930"]
@@ -176,7 +176,7 @@ class Bot(discord.Client):
             if answer == 1:
                 one_check = " <:emoji_13:772843132093202443>  "
                 mark_check_one = "<:emoji_62:735102374523306047>"
-                gif_ans = "https://cdn.discordapp.com/attachments/716879425655799858/742730340744822864/723415445167931452.png"
+                gif_ans = "https://cdn.discordapp.com/attachments/769445612231720960/773618942874615828/772873539174268990.png"
                 best_answer = "**Option ➜** <:emoji_39:773917426835521536>"
                    
             else:
@@ -185,7 +185,7 @@ class Bot(discord.Client):
             if answer == 2:
                 two_check = " <:emoji_13:772843132093202443>  "
                 mark_check_two = "<:emoji_62:735102374523306047>"
-                gif_ans = "https://cdn.discordapp.com/attachments/716879425655799858/742730400706854972/723416002666299433.png"
+                gif_ans = "https://cdn.discordapp.com/attachments/769445612231720960/773619358031151159/772873573999443978.png"
                 best_answer = "**Option ➜** <:emoji_50:773917478723125269>"
                    
             else:
@@ -194,7 +194,7 @@ class Bot(discord.Client):
             if answer == 3:
                 three_check = " <:emoji_13:772843132093202443> "
                 mark_check_three = "<:emoji_62:735102374523306047>"
-                gif_ans = "https://cdn.discordapp.com/attachments/716879425655799858/742730625647247501/723418348834258974.png"
+                gif_ans = "https://cdn.discordapp.com/attachments/769445612231720960/773619564206489600/772873605754388480.png"
                 best_answer = "**Option ➜** <:emoji_44:773918363402371074>"
                    
             else:
