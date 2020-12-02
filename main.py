@@ -127,7 +127,7 @@ class Bot(discord.Client):
         # embed creation
         #value=random.randint(0,0xffffff)
         self.embed=discord.Embed(title="<:eraser:776122385908629544> **| HQ ERASER**",url="https://discord.gg/2degbQMAxU", description="", colour=0x00ff00)
-        self.embed.set_thumbnail(url="https://cdn.discordapp.com/emojis/776122385908629544.png")
+        self.embed.set_thumbnail(url="https://cdn.discordapp.com/emojis/773955381063974972.gif")
         self.embed.set_footer(text="DANGER TRIVIA")
         self.embed.add_field(name="**__Erased Answer__**", value="0", inline=False) 
 
@@ -171,17 +171,21 @@ class Bot(discord.Client):
             if wrong == 1:
                 one_cross = ""
                 not_answer = "**Option ➜ <:emoji_44:776063628561874955> = <:emoji_43:776062431100928001>**" 
-               
+                gif_ans="https://cdn.discordapp.com/emojis/777831205407424513.png"    
+          
             if wrong == 2:
                 two_cross = ""
                 not_answer = "**Option ➜ <:emoji_45:776063661722173452> = <:emoji_43:776062431100928001>**" 
-               
+                gif_ans="https://cdn.discordapp.com/emojis/777831258314637342.png"
+
             if wrong == 3:
                 three_cross = ""
                 not_answer = "**Option ➜ <:emoji_46:776063695104639006> = <:emoji_43:776062431100928001>**"
-         
+                gif_ans="https://cdn.discordapp.com/emojis/777831284990672907.png"
+
     
-        self.embed.set_field_at(0, name="**__Erased Answer__**", value=not_answer, inline=True) 
+        self.embed.set_field_at(0, name="**__Erased Answer__**", value=not_answer, inline=True)
+        self.embed.set_thumbnail(url="{}".format(gif_ans)) 
 
 
         if self.embed_msg is not None:
