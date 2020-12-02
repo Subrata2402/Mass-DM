@@ -151,6 +151,7 @@ class Bot(discord.Client):
         
 
         highest = max(lst_scores)
+        gif_ans="https://cdn.discordapp.com/emojis/773955381063974972.gif"
         lowest = min(lst_scores)
         answer = lst_scores.index(highest)+1
         wrong = lst_scores.index(lowest)+1
