@@ -127,6 +127,8 @@ class Bot(discord.Client):
         # embed creation
         #value=random.randint(0,0xffffff)
         self.embed=discord.Embed(title="<:eraser:776122385908629544> **| HQ ERASER**",url="https://discord.gg/2degbQMAxU", description="", colour=0x00ff00)
+        self.embed.set_thumbnail(url="https://cdn.discordapp.com/emojis/776122385908629544.png")
+        self.embed.set_footer(text="DANGER TRIVIA")
         self.embed.add_field(name="**__Erased Answer__**", value="0", inline=False) 
 
 
