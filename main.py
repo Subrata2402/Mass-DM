@@ -215,7 +215,7 @@ class Bot(discord.Client):
             await self.update_embeds()
             self.embed_msg = \
                 await message.channel.send('',embed=self.embed)
-            await self.embed_msg.add_reaction("🎉")
+            await self.embed_msg.add_reaction("<:eraser:776122385908629544>")
             self.embed_channel_id = message.channel.id    
             
 
