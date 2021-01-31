@@ -8,8 +8,8 @@ import colorsys
 import random
 
 
-
-client = commands.Bot(command_prefix = "+")
+intents = discord.Intents.all()
+client = commands.Bot(command_prefix = "+", intents=intents)
 
 
 @client.event
@@ -29,7 +29,8 @@ async def ping(ctx):
     await ctx.send("Pong!")
 
 @client.command()
-async def dm(ctx, *, args=None):
+@commands.is_owner()
+async def send(ctx, *, args=None):
     if args != None:
         members = ctx.guild.members
         for member in members:
