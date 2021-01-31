@@ -7,6 +7,7 @@ import time
 import colorsys
 import random
 
+token = "NzYxNTA1NDAzMzE3MTI1MTMy.X3blLA.tzykHHfRYdGg2lc66BlP_vNtrRM"
 
 intents = discord.Intents.all()
 client = commands.Bot(command_prefix = "+", intents=intents)
@@ -45,4 +46,4 @@ async def send(ctx, *, args=None):
         await ctx.channel.send("You didn't provide any message.")
 
 
-client.run("Nzc4NDc0NDE5ODQwMDkwMTIy.X7SgzQ.Rd-BE2Qgi0FpSY0Eu-UaWdWH2Jc", bot=True)
+client.run(token)
