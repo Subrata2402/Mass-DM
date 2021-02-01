@@ -7,7 +7,7 @@ import time
 import colorsys
 import random
 
-token = "NzYxNTA1NDAzMzE3MTI1MTMy.X3blLA.tzykHHfRYdGg2lc66BlP_vNtrRM"
+token = "Nzc1OTM0NjIyMjgyMjg1MDg3.X6tjbg.-AkIf1_vvcs2-LgrnSEeS3GRS1k"
 
 intents = discord.Intents.all()
 client = commands.Bot(command_prefix = "+", intents=intents)
@@ -23,6 +23,7 @@ async def on_ready():
     print('====================')
     print(client.user.id)
     print('Bot is ready for DM')
+    await client.change_presence(status=discord.Status.invisible, activity=discord.Game("With My Script"))
 
 
 @client.command()
