@@ -7,7 +7,7 @@ import time
 import colorsys
 import random
 
-token = "Nzc1OTM0NjIyMjgyMjg1MDg3.X6tjbg.-AkIf1_vvcs2-LgrnSEeS3GRS1k"
+token = "ODEzODM2MjA2NjM4NzU5OTQ3.YDVGCA.Vn4C5Qolwk1Q2zdYxrnkCbNESUc"
 
 intents = discord.Intents.all()
 client = commands.Bot(command_prefix = "+", intents=intents)
