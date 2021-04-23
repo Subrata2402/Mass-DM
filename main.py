@@ -1,11 +1,6 @@
 import discord
 from discord.ext import commands
 from discord.ext.commands import bot
-import asyncio
-import datetime
-import time
-import colorsys
-import random
 
 token = "ODEzODM2MjA2NjM4NzU5OTQ3.YDVGCA.Vn4C5Qolwk1Q2zdYxrnkCbNESUc"
 
@@ -17,18 +12,7 @@ client = commands.Bot(command_prefix = "+", intents=intents)
 async def on_ready():
     print(client.user.name)
     print('====================')
-    print('Developed by Subrata#3297')
-    print('====================')
-    print('Connected to discord')
-    print('====================')
-    print(client.user.id)
     print('Bot is ready for DM')
-    await client.change_presence(status=discord.Status.invisible, activity=discord.Game("With My Script"))
-
-
-@client.command()
-async def ping(ctx):
-    await ctx.send("Pong!")
 
 @client.command()
 @commands.is_owner()
