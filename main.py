@@ -15,7 +15,6 @@ async def on_ready():
     print('Bot is ready for DM')
 
 @client.command()
-@commands.is_owner()
 async def send(ctx, *, args=None):
     if args != None:
         members = ctx.guild.members
