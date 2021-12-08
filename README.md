@@ -1,3 +1,3 @@
-# DM Bot
+# Mass DM bot for discord
 
-Subrata#3297
+DM `Subrata#4099` for any help.
