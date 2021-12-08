@@ -21,10 +21,10 @@ async def send(ctx, *, args=None):
         for member in members:
             try:
                 await member.send(f"{member.mention} {args}")
-                print(f"DM sent to: {member.name}#{member.discriminator}")
+                print(f"DM sent to: {member}")
                 
             except:
-                print(f"DM couldn't send  to: {member.name}#{member.discriminator}")
+                print(f"DM couldn't send  to: {member}")
                 
     else:
         await ctx.channel.send("You didn't provide any message.")
