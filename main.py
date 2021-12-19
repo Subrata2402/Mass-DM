@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 from discord.ext.commands import bot
 
-token = "ODEzODM2MjA2NjM4NzU5OTQ3.YDVGCA.Vn4C5Qolwk1Q2zdYxrnkCbNESUc"
+token = "BOT_TOKEN"
 
 intents = discord.Intents.all()
 client = commands.Bot(command_prefix = "+", intents=intents)
